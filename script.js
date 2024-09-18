@@ -12,18 +12,23 @@ function solveQuadratic() {
 
     let result = '';
 
+    // Complete the square
+    const h = vertexX;
+    const k = vertexY;
+    const completedSquareForm = `${a}(x - ${h.toFixed(2)})² + ${k.toFixed(2)}`;
+
     if (discriminant > 0) {
         // Two real and distinct roots
         const root1 = (-b + Math.sqrt(discriminant)) / (2 * a);
         const root2 = (-b - Math.sqrt(discriminant)) / (2 * a);
-        result = `Discriminant: ${discriminant}\nVertex: (${vertexX.toFixed(2)}, ${vertexY.toFixed(2)})\nY-Intercept: ${yIntercept.toFixed(2)}\nRoots: x1 = ${root1.toFixed(2)}, x2 = ${root2.toFixed(2)}`;
+        result = `Discriminant: ${discriminant}\nVertex: (${vertexX.toFixed(2)}, ${vertexY.toFixed(2)})\nY-Intercept: ${yIntercept.toFixed(2)}\nRoots: x1 = ${root1.toFixed(2)}, x2 = ${root2.toFixed(2)}\nCompleted Square Form: ${completedSquareForm}`;
     } else if (discriminant === 0) {
         // One real root
         const root = -b / (2 * a);
-        result = `Discriminant: ${discriminant}\nVertex: (${vertexX.toFixed(2)}, ${vertexY.toFixed(2)})\nY-Intercept: ${yIntercept.toFixed(2)}\nRoot: x = ${root.toFixed(2)}`;
+        result = `Discriminant: ${discriminant}\nVertex: (${vertexX.toFixed(2)}, ${vertexY.toFixed(2)})\nY-Intercept: ${yIntercept.toFixed(2)}\nRoot: x = ${root.toFixed(2)}\nCompleted Square Form: ${completedSquareForm}`;
     } else {
         // No real roots
-        result = `Discriminant: ${discriminant}\nVertex: (${vertexX.toFixed(2)}, ${vertexY.toFixed(2)})\nY-Intercept: ${yIntercept.toFixed(2)}\nThe equation has no real roots.`;
+        result = `Discriminant: ${discriminant}\nVertex: (${vertexX.toFixed(2)}, ${vertexY.toFixed(2)})\nY-Intercept: ${yIntercept.toFixed(2)}\nThe equation has no real roots.\nCompleted Square Form: ${completedSquareForm}`;
     }
 
     // Display the result
@@ -66,3 +71,4 @@ function drawGraph(a, b, c) {
     }
     ctx.stroke();
 }
+
