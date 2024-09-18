@@ -71,4 +71,3 @@ function drawGraph(a, b, c) {
     }
     ctx.stroke();
 }
-
